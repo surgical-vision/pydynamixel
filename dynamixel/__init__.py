@@ -19,7 +19,7 @@ Dynamixel AX-12+ Module
 """
 __version__ =  '1.1.0'
 
-from dynamixel import Dynamixel, SensorModule
+from dynamixel import Dynamixel
 from dynamixel_network import DynamixelNetwork
 from echo_stream import EchoStream
 from serial_stream import SerialStream
