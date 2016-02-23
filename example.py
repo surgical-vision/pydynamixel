@@ -27,7 +27,7 @@ def main(settings):
 
     # Populate our network with dynamixel objects
     for servoId in settings['servoIds']:
-        newDynamixel = dynamixel.Dynamixel(servoId, net)
+        newDynamixel = dynamixel.Dynamixel(servoId, net, 'MX28')
         net._dynamixel_map[servoId] = newDynamixel
     
     if not net.get_dynamixels():

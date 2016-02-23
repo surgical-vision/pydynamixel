@@ -6,22 +6,18 @@ in C# by Scott Ferguson.
 The Python version was created for the Pi Robot Project
 (mailto:patrick@pirobot.org) which lives at http://www.pirobot.org.
 
-This github fork of the project is maintained by Ian Danforth.
-
+This fork is to add compatibility with other dynamixel motors with different control tables
 ## Prerequisites
 
 - Python 2.7 (Please file a ticket if you *really* need 2.6 or 3.* support)
 - pip
 - pyserial
 - git
-- At least one Dynamixel AX-12A or AX-12+ servo.
+- At least one Dynamixel
+        AX-12A
+        AX-12+ servo.
+        MX-28
 - A USB2Dynamixel module.
-
-## Library Installation
-
-You can install just the library from Pypi using pip.
-
-    $ sudo pip install dynamixel
 
 ## Source Installation
 

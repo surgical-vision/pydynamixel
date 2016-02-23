@@ -80,6 +80,42 @@ REGISTER_AX12 = enumeration.Enumeration( [
     ('Lock',  47, {'registerLen': 1, 'textDesc': "Lock"}),
     ('Punch',  48, {'registerLen': 2, 'textDesc': "Punch"} ) ] )
 
+REGISTER_MX28 = enumeration.Enumeration([
+    ('ModelNumber',  0, {'registerLen': 2, 'textDesc': "Model Number"}),
+    ('FirmwareVersion',  2, {'registerLen': 1, 'textDesc': "Firmware Version"}),
+    ('Id', 3, {'registerLen': 1, 'textDesc': "Id"}),
+    ('BaudRate',  4, {'registerLen': 1, 'textDesc': "Baud Rate"}),
+    ('ReturnDelay',  5, {'registerLen': 1, 'textDesc': "Return Delay"}),
+    ('CWAngleLimit',  6, {'registerLen': 2, 'textDesc': "CW Angle Limit"}),
+    ('CCWAngleLimit',  8, {'registerLen': 2, 'textDesc': "CCW Angle Limit"}),
+    ('TemperatureLimit',  11, {'registerLen': 1, 'textDesc': "Temperature Limit"}),
+    ('LowVoltageLimit',  12, {'registerLen': 1, 'textDesc': "Low Voltage Limit"}),
+    ('HighVoltageLimit',  13, {'registerLen': 1, 'textDesc': "High Voltage Limit"}),
+    ('MaxTorque',  14, {'registerLen': 2, 'textDesc': "Max Torque"}),
+    ('StatusReturnLevel',  16, {'registerLen': 1, 'textDesc': "Status Return Level"}),
+    ('AlarmLED',  17, {'registerLen': 1, 'textDesc': "Alarm Led"}),
+    ('AlarmShutdown',  18, {'registerLen': 1, 'textDesc': "Alarm Shutdown"}),
+    ('MultiTurnOffset',  20, {'registerLen': 2, 'textDesc': "Multi-turn offset"}),
+    ('Resolution Divider',  22, {'registerLen': 2, 'textDesc': "Resolution divider"}),
+    ('TorqueEnable',  24, {'registerLen': 1, 'textDesc': "Torque Enable"}),
+    ('LED',  25, {'registerLen': 1, 'textDesc': "LED"}),
+    ('Dgain',  26, {'registerLen': 1, 'textDesc': "PID: D gain"}),
+    ('Igain',  27, {'registerLen': 1, 'textDesc': "PID: I gain"}),
+    ('Pgain',  28, {'registerLen': 1, 'textDesc': "PID: P gain"}),
+    ('GoalPosition', 30, {'registerLen': 2, 'textDesc': "Goal Position"}),
+    ('MovingSpeed', 32, {'registerLen': 2, 'textDesc': "Moving Speed"}),
+    ('TorqueLimit',  34, {'registerLen': 2, 'textDesc': "Torque Limit"}),
+    ('CurrentPosition',  36, {'registerLen': 2, 'textDesc': "Current Position"}),
+    ('CurrentSpeed',  38, {'registerLen': 2, 'textDesc': "Current Speed"}),
+    ('CurrentLoad',  40, {'registerLen': 2, 'textDesc': "Current Load"}),
+    ('CurrentVoltage',  42, {'registerLen': 1, 'textDesc': "Current Voltage"}),
+    ('CurrentTemperature',  43, {'registerLen': 1, 'textDesc': "Current Temperature"}),
+    ('RegisteredInstruction',  44, {'registerLen': 1, 'textDesc': "Registered Instruction"}),
+    ('Moving',  46, {'registerLen': 1, 'textDesc': "Moving"}),
+    ('Lock',  47, {'registerLen': 1, 'textDesc': "Lock"}),
+    ('Punch',  48, {'registerLen': 2, 'textDesc': "Punch"}),
+    ('GoalAcceleration',  73, {'registerLen': 1, 'textDesc': "Goal Acceleration"})])
+
 REGISTER_AXS1 = enumeration.Enumeration( [
     ('ModelNumber',  0, {'registerLen': 2, 'textDesc': "Model Number"}),
     ('FirmwareVersion',  2, {'registerLen': 1, 'textDesc': "Firmware Version"}),
@@ -116,18 +152,19 @@ REGISTER_AXS1 = enumeration.Enumeration( [
     ('IrRemoconTxData0',  50, {'registerLen': 1, 'textDesc': "IR Data to Send, first byte"}),
     ('IrRemoconTxData1',  51, {'registerLen': 1, 'textDesc': "IR Data to Send, second byte"}),
     ('ObstacleDetectedComp',  52, {'registerLen': 1, 'textDesc': "Obstacle Detected Compare Value"}),
-    ('LightDetectedComp',  53, {'registerLen': 1, 'textDesc': "Light Detected Compare Value"}) ] )
+    ('LightDetectedComp',  53, {'registerLen': 1, 'textDesc': "Light Detected Compare Value"})])
 
-DEVICE = enumeration.Enumeration( [
+DEVICE = enumeration.Enumeration([
     ('AX12', REGISTER_AX12, 'AX-12 Servo'),
-    ('AXS1', REGISTER_AXS1, 'AX-S1 Sensor Module') ] )
+    ('AXS1', REGISTER_AXS1, 'AX-S1 Sensor Module'),
+    ('MX28', REGISTER_MX28, 'MX-28 Servo')])
 
-STATUS_RETURN_LEVEL = enumeration.Enumeration( [
+STATUS_RETURN_LEVEL = enumeration.Enumeration([
     ('NoResponse', 0),
     ('RespondToReadData', 1),
-    ('RespondToAll', 2 )] )
+    ('RespondToAll', 2)])
 
-INSTRUCTION = enumeration.Enumeration( [
+INSTRUCTION = enumeration.Enumeration([
     ('Ping', 1, {'textDesc': "Respond only with a status packet."}),
     ('ReadData', 2, {'textDesc': "Read register data."}),
     ('WriteData', 3, {'textDesc': "Write register data."}),
@@ -136,4 +173,4 @@ INSTRUCTION = enumeration.Enumeration( [
     ('Action', 5, {'textDesc': "Perform pending RegWrite instructions."}),
     ('Reset', 6, {'textDesc': "Reset all registers (including ID) to default values."}),
     ('SyncWrite',  0x83, {'textDesc': "Write register data to multiple \
-    Dynamixels at once. "}) ] )
+    Dynamixels at once. "})])
