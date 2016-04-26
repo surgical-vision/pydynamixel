@@ -9,7 +9,7 @@ The Python version was created for the Pi Robot Project
 This fork is to add compatibility with other dynamixel motors with different control tables
 ## Prerequisites
 
-- Python 2.7 (Please file a ticket if you *really* need 2.6 or 3.* support)
+- Python 2.7 
 - pip
 - pyserial
 - git
@@ -24,7 +24,9 @@ This fork is to add compatibility with other dynamixel motors with different con
 If you'd like to have access to the getting started examples or contribute to
 the library, you can clone this library locally.
 
-    $ git clone https://github.com/iandanforth/pydynamixel.git
+    $ git clone https://github.com/surgical-vision/pydynamixel.git
+
+    $ sudo python setup.py install
 
 ### Run the example
 

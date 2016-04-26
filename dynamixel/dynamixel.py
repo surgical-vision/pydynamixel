@@ -36,10 +36,11 @@ AXS1PropNames = {}
 
 class Dynamixel (object):
     """ Dynamixel class """
-    def __init__(self, ident, dyn_net, servo_type):
+    def __init__(self, ident, dyn_net, servo_type='MX28'):
         """ Constructor
         ident - the id for this dynamixel
         dyn_net - the parent dynamixel network
+        servo_type - the type of dynamixel connected (defaults to MX-28)
         """
         self._id = ident
         self._dyn_net = dyn_net
